@@ -1,0 +1,39 @@
+1. Install python
+https://www.python.org/downloads/
+2. Install mongodb community server
+https://www.mongodb.com/try/download/community
+3. Install Pycharm community version
+https://www.jetbrains.com/pycharm/download/#section=windows
+4. Download and install git bash
+https://git-scm.com/downloads
+5. Create a git repository in your github account
+6. Clone the created git repo using below git bash command in your local computer in some folder where you want to write code
+git clone https://github.com/ranjanpandeysbp/fastapi-mongodb-crudapp.git
+**Make sure to use your git repository
+7. Open the local source code folder in Pycharm from open File->Open
+8. Open terminal in pycharm and install below packages by running below command
+pip install pymongo fastapi uvicorn
+9. Create different folders like config, models, routes, schemas
+10. Create index.py at root of project
+11. Write code in index.py for creating a FastAPI app
+12. Go to terminal and run below command to run server in auto-relaod mode
+uvicorn index:app --reload
+13. Go to browser and hit below url to access the default FastAPI swagger page
+http://127.0.0.1:8000/docs
+14. Using this swagger doc page we will test our all REST api endpoints, you can also use Postman to test your api endpoints
+15. Create database.py file inside config folder and write code for DB connection
+16. Create student.py inside models, routes, schemas folder
+17. Create student model inside models with the help of pydantic BaseModel and add some fields
+18. Create method and route in your routes/student.py to get all students
+19. Make sure to register the student_router to the FastAPI app inside index.py file
+20. Go to the browser and refresh below url, you will see your new endpoint
+http://127.0.0.1:8000/docs
+21. Create schemas/student.py with methods to transform one and many DB object to entity object to send as response to UI
+22. In routes/student.py create other REST endpoints to create, update, delete, find_by_id student
+23. Test all REST API endpoints through swagger url
+24. Git commit and push your code to github using below steps
+git add .
+git commit -m "first commit"
+git remote set-url origin https://<YOUR_GITHUB_USERNAME>:<YOUR_GITHUB_PERSONAL_TOKEN>@github.com/<YOUR_GITHUB_USERNAME>/fastapi-mongodb-crudapp.git
+git push
+25. Enable CORS(Cross Origin Resource Sharing) in index.py file
